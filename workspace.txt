@@ -1,0 +1,49 @@
+系统：manjaro kde
+装好系统以后检查：
+1. 更新系统并安装中文
+https://liyangweb.com/linux_desktop/553.html
+
+2. 显卡驱动是不是nvidia nvidia-smi会不会出现表格
+（如果显卡驱动不是nvidia的，-待补充-）
+
+3. https://github.com/Qv2ray/Qv2ray/releases/tag/v2.7.0                --软件
+    https://github.com/v2ray/v2ray-core/releases                               --v2ray核（最新的可能报错）
+如果报错，给v2ray 和v2ctl 权限， 参考https://github.com/Qv2ray/Qv2ray/issues/237
+
+4. anaconda用yay装：
+sudo su
+pacman -Syu
+pacman -S flameshot v2ray yay code vim openssh swig
+yay -S anaconda v2raya
+# 环境
+export PATH=$PATH:/opt/anaconda/bin/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/bioconda/
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/main
+conda config --add channels https://mirrors.bfsu.edu.cn/anaconda/pkgs/r/
+conda config --set show_channel_urls yes
+conda config --set auto_activate_base false  # --设置终端自动进入
+source /opt/anaconda/bin/activate root
+conda create -n pymvpa python==2.7.12
+conda activate pymvpa
+pip install pymvpa2
+conda install ipython
+pip install backports.functools-lru-cache==1.6.4
+pip install pprocess
+pip install statsmodels==0.6.1
+
+5. 美化：系统主题本身就很好看了，装个paprius图标（github）
+
+6. 
+systemctl enable --now sshd
+systemctl enable --now vivv
+
+7. 系统设定
+#1. 
+sudo vim /etc/pacman.d/mirrorlist
+Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch
+
+
