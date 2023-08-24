@@ -1,0 +1,3 @@
+CPU tensorflow2 on docker:
+docker pull tensorflow/tensorflow:latest-jupyter
+docker run -it --name=tf2 -p 8888:8888 -v D:\#code_data\d2l-zh\tensorflow:/tf tensorflow/tensorflow:latest-jupyter
