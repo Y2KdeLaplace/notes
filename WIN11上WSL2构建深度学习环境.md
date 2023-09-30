@@ -13,7 +13,6 @@
 ## 装CUDA toolkit
 去[官网](https://developer.nvidia.com/cuda-toolkit-archive)下载11.8的CUDA toolkit（2023.9.30，tensorflow2.14）  
 安装完成后确认`/usr/local/cuda/bin/nvcc --version`，用local或者runfile方式安装！network会自动安装成最新版本  
-Ubuntu似乎可以`sudo apt install nvidia-cuda-toolkit`这么安装（但我没试过是否可行）  
 ## 装cuDNN
 去[官网](https://developer.nvidia.com/rdp/cudnn-download)下载对于11.x CUDA的v8.9.5的cuDNN（2023.9.30，tensorflow2.14）
 （如果将来有报错考虑`sudo apt install zlib1g`）
