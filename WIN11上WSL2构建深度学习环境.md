@@ -34,4 +34,7 @@
 把anaconda的linux版本的安装包下载并复制到wsl的home路径下，像Linux一样安装并添加路径：  
 在`~/.bashrc·`文件末尾添加`export PATH=/home/USER_NAME/anaconda3/bin:$PATH`，并`source ~/.bashrc`  
 
+# 安装条件
+Windows Native Requires [Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019](https://learn.microsoft.com/zh-CN/cpp/windows/latest-supported-vc-redist?view=msvc-170)，装完后重启电脑
+测试是否能用GPU计算：`import tensorflow as tf` `tf.test.is_gpu_available()`
 
