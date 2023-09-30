@@ -22,13 +22,13 @@
 >  
 >Navigate to your <cudnnpath> directory containing the cuDNN tar file.  
 >Unzip the cuDNN package.  
->> `tar -xvf cudnn-linux-$arch-8.x.x.x_cudaX.Y-archive.tar.xz`  
+> `tar -xvf cudnn-linux-$arch-8.x.x.x_cudaX.Y-archive.tar.xz`  
 >  
 >Where `$arch` is x86_64, sbsa, or ppc64le.  
 >Copy the following files into the CUDA toolkit directory.  
->>`sudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include` 
->>`sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64`
->>`sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*`
+>`sudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include` 
+>`sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64`
+>`sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*`
   
 # 装anaconda
 把anaconda的linux版本的安装包下载并复制到wsl的home路径下，像Linux一样安装并添加路径：  
