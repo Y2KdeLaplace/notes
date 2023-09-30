@@ -11,3 +11,5 @@ wsl --install
 
 装anaconda在wsl：  
 复制文件到wsl里，改安装包用户`chown anaconda.sh usr`  
+
+
