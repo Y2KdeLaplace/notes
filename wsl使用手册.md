@@ -8,3 +8,6 @@ wsl --install
 导入虚拟机备份`wsl --import new_env_name pathway/xxx.tar`  
 单独启动虚拟机`wsl -d env_name --user user_id`  
 关闭虚拟机`wsl --terminate env_name`  
+
+装anaconda在wsl：  
+复制文件到wsl里，改安装包用户`chown anaconda.sh usr`  
