@@ -15,8 +15,8 @@
 安装完成后确认`/usr/local/cuda/bin/nvcc --version`，用local或者runfile方式安装！network会自动安装成最新版本  
 添加nvcc到环境变量: 在`~/.bashrc·`文件末尾添加`export PATH=$PATH:/usr/local/cuda/bin`
 ## 装cuDNN
-去[官网](https://developer.nvidia.com/rdp/cudnn-download)下载对于11.x CUDA的v8.9.5的cuDNN（2023.9.30，tensorflow2.14）
-安装依赖`sudo apt install zlib1g`
+去[官网](https://developer.nvidia.com/rdp/cudnn-download)下载对于11.x CUDA的v8.9.5的cuDNN（2023.9.30，tensorflow2.14）  
+安装依赖`sudo apt install zlib1g`  
 安装方式参考[官方文档](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html)的
 >Before issuing the following commands, you must replace X.Y and v8.x.x.x with your specific CUDA and cuDNN versions and package date.  
 >  
