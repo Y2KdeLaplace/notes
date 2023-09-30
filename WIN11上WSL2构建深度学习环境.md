@@ -6,7 +6,9 @@
 
 # 装CUDA配件
 ## 装CUDA驱动
-`nvidia-smi`看看有没有驱动，没有就去给win11系统装驱动
+`nvidia-smi`看看有没有驱动，没有就去给win11系统装驱动，有驱动的话看看cuda版本是多少，这决定之后CUDA toolkit和cudnn怎么装
+## 装CUDA toolkit
+
 
 # 装anaconda
 把anaconda的linux版本的安装包下载并复制到wsl的home路径下，像Linux一样安装并添加路径：  
