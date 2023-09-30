@@ -8,6 +8,7 @@
 ## 装CUDA驱动
 `nvidia-smi`看看有没有驱动，没有就去给win11系统装驱动，有驱动的话看看cuda版本是多少，这决定之后CUDA toolkit和cudnn怎么装
 ## 装CUDA toolkit
+去[官网](https://developer.nvidia.com/rdp/cudnn-download)下载
 
 
 # 装anaconda
