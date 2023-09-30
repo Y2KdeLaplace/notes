@@ -16,10 +16,22 @@
 添加nvcc到环境变量: 在`~/.bashrc·`文件末尾添加`export PATH=$PATH:/usr/local/cuda/bin`
 ## 装cuDNN
 去[官网](https://developer.nvidia.com/rdp/cudnn-download)下载对于11.x CUDA的v8.9.5的cuDNN（2023.9.30，tensorflow2.14）
-（如果将来有报错考虑`sudo apt install zlib1g`）
+安装依赖`sudo apt install zlib1g`
+安装方式参考[官方文档](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html)的
+>Before issuing the following commands, you must replace X.Y and v8.x.x.x with your specific CUDA and cuDNN versions and package date.  
+>  
+>Navigate to your <cudnnpath> directory containing the cuDNN tar file.  
+>Unzip the cuDNN package.  
+>> `tar -xvf cudnn-linux-$arch-8.x.x.x_cudaX.Y-archive.tar.xz`  
+>  
+>Where `$arch` is x86_64, sbsa, or ppc64le.  
+>Copy the following files into the CUDA toolkit directory.  
+>>`sudo cp cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include` 
+>>`sudo cp -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64`
+>>`sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*`
   
 # 装anaconda
 把anaconda的linux版本的安装包下载并复制到wsl的home路径下，像Linux一样安装并添加路径：  
-在`~/.bashrc·`文件末尾添加`export PATH=/home/USER_NAME/anaconda3/bin:$PATH`后`source ~/.bashrc`  
+在`~/.bashrc·`文件末尾添加`export PATH=/home/USER_NAME/anaconda3/bin:$PATH`，并`source ~/.bashrc`  
 
 
