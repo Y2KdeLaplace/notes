@@ -1,0 +1,4 @@
+wsl --install  
+看情况运行`wsl --set-default-version 2`  
+去微软商店安装ubuntu
+`wsl -l -v`看wsl有的环境和版本
