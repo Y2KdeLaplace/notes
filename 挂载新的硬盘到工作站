@@ -1,0 +1,34 @@
+## 看硬盘挂载情况
+sudo fdisk -l  
+df -h  
+
+## 分区
+# 1、使用parted对/dev/sda进行分区
+parted /dev/sda  
+# 2、建立GPT分区
+mklabel gpt  
+# 3、使用print命名打印信息
+print  
+# 4、建立分区（主分区primary，扩展分区extended）,0KB 8002GB为分区大小，可自行设置
+mkpart primary/extended 0KB 8002GB  
+# 退出
+quit  
+
+## 格式化分区为 ext4格式
+sudo mkfs -t ext4 /dev/sda1  
+
+# 备选方案（不推荐，好像硬盘大小会变小）
+直接sudo mkfs -t ext4 /dev/sda  
+直接mount  
+
+## 查看UUID
+ls -l /dev/disk/by-uuid/
+
+## 设置开机自动挂载
+>sudo vim /etc/fstab  
+>file system：指代文件系统的设备名。最初该字段只包含待挂载分区的设备名（如/dev/sda1）。现在还可以包含LABEL或UUID
+>mount point：文件系统挂载点，文件系统包含挂载点下整个目录树结构里的所有数据，除非其中某个目录又挂载了另一个文件系统
+>type：文件系统类型，下面是多数常见文件系统类型（ext4、tmpfs、devpts、sysfs、proc、swap、vfat）
+>options：mount命令选项，mount选项包括noauto（启动时不挂载该文件系统）和ro（只读方式挂载文件系统）等。在该字段里添加用户或属主选项，即可允许该用户挂载文件系统。多个选项之间必须用逗号隔开。
+>dump：转储文件系统，该字段只在用dump备份时才有意义。数字1表示该文件系统需要转储，0表示不需要转储
+>pass：文件系统检查。0表示不必检查该文件系统，数字1示意该文件系统需要先行检查（用于根文件系统）。数字2则表示完成根文件系统检查后，再检查该文件系统
