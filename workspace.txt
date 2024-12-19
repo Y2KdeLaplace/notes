@@ -1,4 +1,4 @@
-系统：manjaro kde
+系统：manjaro kde, 一定要英文安装
 装好系统以后检查：
 1. 更新系统并安装中文
 https://liyangweb.com/linux_desktop/553.html
@@ -13,7 +13,7 @@ https://liyangweb.com/linux_desktop/553.html
 4. anaconda用yay装：
 sudo su
 pacman -Syu
-pacman -S flameshot v2ray yay code vim openssh swig
+pacman -S flameshot v2ray yay code vim # openssh swig
 yay -S anaconda v2raya
 # 环境
 export PATH=$PATH:/opt/anaconda/bin/
@@ -36,6 +36,7 @@ pip install pprocess
 pip install statsmodels==0.6.1
 
 5. 美化：系统主题本身就很好看了，装个paprius图标（github）
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 
 6. 
 systemctl enable --now sshd
@@ -46,4 +47,23 @@ systemctl enable --now vivv
 sudo vim /etc/pacman.d/mirrorlist
 Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch
 
+###
+参考网站
+https://tech.shmily-qjj.top/
+https://zhuanlan.zhihu.com/p/460826583
 
+virtualbox for ubuntu装虚拟机
+
+系统清理
+
+内存清理
+sudo echo 1 > /proc/sys/vm/drop_caches
+sudo echo 2 > /proc/sys/vm/drop_caches
+sudo echo 3 > /proc/sys/vm/drop_caches
+日志清理
+journalctl –disk-usage 查看日志占用
+sudo journalctl –vacuum-size=500M 限制归档日志大小，对日志做清除操作，适用于/var占用较大的场景
+
+https://update.glados-config.com/clash/413197/187d4ad/151873/glados.yaml
+
+env WEBKIT_DISABLE_COMPOSITING_MODE=1 gnome-control-center online-accounts
